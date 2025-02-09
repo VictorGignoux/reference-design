@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ asset("style/global_style.css") }}">
+        {% block content %}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div id="header-top">
+                <p class="header-top-elm">REFERENCES</br>DESIGN</p>
+                <div class="header-categories">
+                    <a href="{{ path('app_categorie', {'id': categorieId }) }}"><h1 class="change-couleur">{{ categorieNom }}</h1></a>
+                    <div class="header-sous-categories">
+                    </div>
+                </div>
+                <div id="header-bouton" class="header-top-elm">
+                    <img id="header-bouton-image" src="{{ asset("img/etoile.png") }}">
+                </div>
+            </div>
+            <div id="sous-categorie-liens">
+                {% for i in secondaryCategories %}
+                    <a href="{{ path('app_categorie', {id:i.id}) }}" class="bouton-sous-categorie change-couleur">{{ i.nom }}</a></li>
+                {% endfor %}
+            </div>
+        </header>
+        <div id="body" data-categorie="{{ categorieNom }}">
+            <nav>
+                <ul>
+                    {% for i in primaryCategories %}
+                        <li><a href="{{ path('app_categorie', {id:i.id}) }}" class="bouton-categorie {{ i.nom }}">{{ i.nom }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+
+    <script type="text/javascript" src="{{ asset("script/animationCRUDButtons.js") }}"></script>
+</html>

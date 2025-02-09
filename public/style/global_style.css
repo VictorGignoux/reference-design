@@ -1,0 +1,166 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppin';
+}
+
+@font-face {
+    font-family: 'Poppin';
+    src: url('../font/Poppin-Regular.ttf');
+}
+
+html {
+    --primaire: #912126;
+    --fond: #fff7f0;
+    --objet: #f6b6bb;
+    --mode: #e94f28;
+    --archi: #cdb85c;
+    --graphisme: #e0858e;
+    --art: #bad8f3;
+    --change: #ffffff;
+}
+
+body{
+	background-color: var(--fond);
+	overflow: hidden;
+}
+
+#header-top{
+	height: 15vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-top-elm{
+	width: 15vw;
+}
+
+#sous-categorie-liens{
+	height: 2vh;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+header p{
+	font-size: 1.5vw;
+	margin-left: 3vw;
+}
+
+header h1{
+	font-size: 4.5vw;
+}
+
+#header-bouton{
+	display: flex;
+	justify-content: flex-end;
+	background-color: var(--fond);
+	margin-right: 3vw;
+}
+
+#header-bouton-image{
+	max-height: 6vh;
+}
+
+#header-bouton-image:hover{
+	cursor: pointer;
+}
+
+#crud{
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	right: 4vw;
+}
+
+.crud-bouton{
+	background-color: var(--fond);
+	font-size: 1.2vw;
+	position: fixed;
+	top: 10vh;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s;
+}
+
+.crud-bouton:hover{
+	font-size: 1.3vw;
+	transition: 0.1s;
+}
+
+#body{
+	display: flex;
+	flex-direction: row;
+}
+
+nav{
+	background-color: var(--primaire);
+	min-width: 10vw;
+	border-top-right-radius: 4vw;
+	border-bottom-right-radius: 4vw;
+	height: 80vh;
+}
+
+ul{
+	height: 100%;
+	margin-left: 1.3vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content: center;
+	list-style-type: none;
+}
+
+.bouton-categorie{
+	transition: 0.3s;
+	font-size: 1.2vw;
+}
+
+.bouton-categorie:hover{
+	margin-left: 0.3vw;
+}
+
+.bouton-sous-categorie{
+	font-size: 1.5vw;
+}
+
+.OBJET{
+	color: var(--objet);
+}
+
+.MODE{
+	color: var(--mode);
+}
+
+.ARCHI{
+	color: var(--archi);
+}
+
+.GRAPHISME{
+	color: var(--graphisme);
+}
+
+.ART{
+	color: var(--art);
+}
+
+.change-couleur{
+	color: var(--change);
+}
+
+button{
+	border: 0;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+a{
+	text-decoration: none;
+}

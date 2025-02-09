@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<title>{{ sousCategorieNom }}</title>
+<link rel="stylesheet" href="{{ asset("style/categorie.css") }}">
+{% endblock %}
+
+{% block body %}
+<div id="contenu">
+    <div id="references">
+        {% for i in references %}
+            <div class="lien-reference">
+                <a href="{{ path('app_reference', {id:i.id}) }}"><img src="{{ asset('uploads/' ~ i.image) }}"></a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="crud">
+    <a href="{{ path('app_nouveau') }}" class="crud-bouton change-couleur">Nouveau</a>
+</div>
+<script type="text/javascript" src="{{ asset("script/animationRefsPop.js") }}"></script>
+<script type="text/javascript" src="{{ asset("script/changePage.js") }}"></script>
+{% endblock %}

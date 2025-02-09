@@ -1,0 +1,43 @@
+#contenu{
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	height: 75vh;
+	margin-top: 5vh;
+}
+
+#references{
+	width: 82vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: 0 4vw 0 4vw;
+}
+
+.lien-reference{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 16vw;
+	height: 16vw;
+	transform: scale(0);
+}
+
+.lien-reference button{
+	background-color: var(--fond);
+}
+
+.lien-reference img{
+	object-fit: cover;
+	width: 13vw;
+	height: 13vw;
+	transition: 0.2s;
+}
+
+.lien-reference img:hover{
+	width: 14vw;
+	height: 14vw;
+	box-shadow: 0 0 1em #444444;
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<title>{{ categorieNom }}</title>
+<link rel="stylesheet" href="{{ asset("style/reference.css") }}">
+{% endblock %}
+
+{% block body %}
+<div id="reference-body">
+
+    <div class="reference">
+        <div id="reference-img">
+            <img src="{{ asset('uploads/' ~ reference.image) }}">
+        </div>
+        <div id="reference-texte">
+            <p id="reference-texte-notice" class="change-couleur">{{ reference.notice }}</p>
+            <p id="reference-texte-paragraphe">{{ reference.texte }}</p>
+        </div>
+    </div>
+    <div id="navigation">
+
+        {% if prevId != -1 %}
+        <a id="navigation-bouton-gauche" class="navigation-bouton" href="{{ path('app_reference', { 'id' : prevId }) }}">
+            <img src="{{ asset("img/fleche-gauche.png") }}">
+        </a>
+        {% else %}
+        <div class="navigation-bouton-inactif"></div>
+        {% endif %}
+
+        {% if nextId != -1 %}
+        <a id="navigation-bouton-droit" class="navigation-bouton" href="{{ path('app_reference', { 'id' : nextId }) }}">
+            <img src="{{ asset("img/fleche-droite.png") }}">
+        </a>
+        {% else %}
+        <div class="navigation-bouton-inactif"></div>
+        {% endif %}
+
+    </div>
+</div>
+<div id="crud">
+    <a href="{{ path('app_nouveau') }}" class="crud-bouton change-couleur">Nouveau</a>
+    <a href="{{ path('app_modifier', {'id' : reference.id }) }}" class="crud-bouton change-couleur">Modifier</a>
+    <a href="{{ path('app_supprimer', {'id' : reference.id }) }}" class="crud-bouton change-couleur">Supprimer</a>
+</div>
+<script type="text/javascript" src="{{ asset("script/changePage.js") }}"></script>
+{% endblock %}

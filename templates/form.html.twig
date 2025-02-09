@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ asset("style/global_style.css") }}">
+        <link rel="stylesheet" href="{{ asset("style/form.css") }}">
+        <title>Nouvelle référence</title>
+    </head>
+    <body>
+        {{ form_start(form, {'attr': {'id': 'ajoutReferenceForm'}}) }}
+            {{ form_row(form.notice) }}
+            {{ form_row(form.texte) }}
+            {{ form_row(form.imageFile) }}
+            {{ form_row(form.categorie) }}
+            <div id="formBoutons">
+                <button type="button" onclick="previousPage()" class="formBouton">Annuler</button>
+                <button type="submit" form="ajoutReferenceForm" class="formBouton">Valider</button>
+            </div>
+        {{ form_end(form) }}
+    </body>
+    <script type="text/javascript" src="{{ asset("script/previousPage.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("script/textarea.js") }}"></script>
+</html>
